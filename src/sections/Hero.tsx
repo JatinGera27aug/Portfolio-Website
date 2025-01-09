@@ -2,10 +2,14 @@ import memojiImage from '@/assets/images/memoji-computer.png';
 import ArrowDown from '@/assets/icons/arrow-down.svg'
 import grainImage from '@/assets/images/grain.jpg';
 import StarIcon from '@/assets/icons/star.svg';
+import SparkleIcon from '@/assets/icons/sparkle.svg';
 import Image from 'next/image';
+import { HeroOrbit } from '@/components/HeroOrbit';
 
 export const HeroSection = () => {
   return <div className='py-32 md:py-48 lg:py-60 relative z-0 overflox-x-clip'>
+    {/* to create mask */}
+    <div className='absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]'>
     <div className='absolute inset-0 -z-30 opacity-5' style={{
       backgroundImage: `url(${grainImage.src})`,
     }}></div>
@@ -13,14 +17,53 @@ export const HeroSection = () => {
     <div className='size-[800px] hero_ring'></div>
     <div className='size-[1000px] hero_ring'></div>
     <div className='size-[1200px] hero_ring'></div>
-    <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 '>
-    <div className='border border-red-500 size-[760px] animate-spin [animation-duration:30s]'>
-      <div className='border border-red-500 inline-flex animate-spin [animation-duration:5s]'>
+    <HeroOrbit size={760} rotation={-72}>
       <StarIcon className="size-28 text-emerald-300" />
       {/* text-pink-500 hover:text-emerald-300 transition duration-300 */}
+      </HeroOrbit>
+
+      <HeroOrbit size={520} rotation={20}>
+      <StarIcon className="size-14 text-emerald-300" />
+      </HeroOrbit>
+
+      <HeroOrbit size={560} rotation={98}>
+      <StarIcon className="size-9 text-emerald-300" />
+      </HeroOrbit>
+
+      <HeroOrbit size={410} rotation={-14}>
+      <SparkleIcon className="size-8 text-emerald-300/20" />
+      </HeroOrbit>
+
+      <HeroOrbit size={420} rotation={79}>
+      <SparkleIcon className="size-5 text-emerald-300/20" />
+      </HeroOrbit>
+
+      <HeroOrbit size={510} rotation={178}>
+      <SparkleIcon className="size-10 text-emerald-300/20" />
+      </HeroOrbit>
+
+      <HeroOrbit size={690} rotation={144}>
+      <SparkleIcon className="size-14 text-emerald-300/20" />
+      </HeroOrbit>
+
+      <HeroOrbit size={714} rotation={0}>
+      <div className="size-3 rounded-full bg-emerald-300/20" />
+      </HeroOrbit>
+
+      <HeroOrbit size={855} rotation={99}>
+      <div className="size-3 rounded-full bg-emerald-300/20" />
+      </HeroOrbit>
+
+      <HeroOrbit size={500} rotation={-41}>
+      <div className="size-2 rounded-full bg-emerald-300/20" />
+      </HeroOrbit>
+
+      <HeroOrbit size={630} rotation={-190}>
+      <div className="size-2 rounded-full bg-emerald-300/20" />
+      </HeroOrbit>
       </div>
-      </div>
-    </div>
+
+
     <div className="container">
       <div className='flex flex-col items-center '>
       <Image src={memojiImage}  className='size-[100px]' alt="Person peeking from behind of laptop" />
